@@ -8,31 +8,31 @@
 project: 
   author:       "maehw"
   title:        "Wolf sheep cabbage river crossing puzzle ASIC design (🐺🐐🥬🚣)"
-  description:  "The story of the wolf, goat and cabbage problem, quoted from wikipedia with some emojis added for later use in visualization: 'A farmer (🧑‍🌾) went to a market and purchased a wolf (🐺), a goat (🐐), and a cabbage (🥬). On his way home, the 🧑‍🌾 came to the bank of a river (〰〰) and rented a boat (🛶). But crossing the river by 🛶, the 🧑‍🌾 could carry only himself and a single one of his purchases: the 🐺, the 🐐, or the 🥬. If left unattended together, the 🐺 would eat the 🐐, or the 🐐 would eat the 🥬. The 🧑‍🌾's challenge was to carry himself and his purchases to the far bank of the 〰〰 leaving each purchase intact.' The solution to the problem is known. However, this project wants to allow the interactive game of this puzzle."
-  how_it_works: ""      # Longer description of how the project works
-  how_to_test:  ""      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  ""      # Describe any external hardware needed
+  description:  "Play the wolf, goat and cabbage puzzle interactively."
+  how_it_works: "Truth table with the game logic (hidden easter egg). The inputs are the positions of the farmer, wolf, goat and cabbage. The 7-segment display shows the status of the game (won or lost)."
+  how_to_test:  "Slide the input switches, think, have a look at the 7-segment display."
+  external_hw:  "Input switches and 7-segment display"
   doc_link:     "https://github.com/maehw/wokwi-verilog-gds-wolf-goat-cabbage/blob/main/README.md"
-  clock_hz:     0       # Clock frequency in Hz (if required)
-  language:     "wokwi" # other examples include Verilog, Amaranth, VHDL, etc
-  wokwi_id:     0       # the wokwi ID
-  picture:      ""      # relative path to a picture in your repository
-  inputs:               # a description of what the inputs do
-    - clock
-    - reset
-    - none
-    - none
-    - none
-    - none
-    - none
-    - none
+  clock_hz:     0
+  language:     "wokwi"
+  wokwi_id:     341614346808328788
+  picture:      "wokwi-simulation-io-mapping.png"
+  inputs:
+    - not connected because it is typically used for clocked designs and may be used in the future of this design
+    - input signal F for the position of the farmer (🧑‍🌾/🚣)
+    - input signal W for the position of the wolf (🐺)
+    - input signal G for the position of the goat (🐐)
+    - input signal C for the position of the cabbage (🥬)
+    - here be dragons or an easter egg
+    - unused
+    - unused
   outputs:
-    - segment a         # a description of what the outputs do
-    - segment b
-    - segment c
-    - segment d
-    - segment e
-    - segment f
-    - segment g
-    - none
+    - output signal ~E, i.e. the top and bottom segments light up, when the game is over ❌❌❌ due to an unattended situation on any river bank side
+    - output signal ~R i.e. the top-right and bottom-right segments light up, to indicate an unattended situation on the right river bank (game over ❌)
+    - output signal ~R i.e. the top-right and bottom-right segments light up, to indicate an unattended situation on the right river bank (game over ❌)
+    - output signal ~E, i.e. the top and bottom segments light up, when the game is over ❌❌❌ due to an unattended situation on any river bank side
+    - output signal ~L i.e. the top-left and bottom-left segments light up, to indicate an unattended situation on the left river bank (game over ❌)
+    - output signal ~L i.e. the top-left and bottom-left segments light up, to indicate an unattended situation on the left river bank (game over ❌)
+    - here be dragons or an easter egg
+    - output signal A to light up the "dot LED" of the 7 segment display as an indicator that all objects have reached the right bank of the river and the game is won! 🎉🎉🎉
 
